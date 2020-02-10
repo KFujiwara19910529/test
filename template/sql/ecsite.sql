@@ -1,8 +1,8 @@
 set names utf8;
 set foreign_key_checks = 0;
-drop databases if exists template;
+drop database if exists template;
 
-create database if not exists tamplate;
+create database if not exists template;
 use template;
 
 drop table if exists login_user_transaction;
@@ -18,7 +18,7 @@ create table login_user_transaction(
 
 drop table if exists item_info_transaction;
 
-create table item_into_transaction(
+create table item_info_transaction(
 	id int not null primary key auto_increment,
 	item_name varchar(30),
 	item_price int,
@@ -27,7 +27,9 @@ create table item_into_transaction(
 	update_date datetime
 );
 
-drop table user_buy_item_transaction(
+drop table if exists user_buy_item_tramsaction;
+
+create table user_buy_item_transaction(
 	id int not null primary key auto_increment,
 	item_transaction_id int,
 	total_price int,
